@@ -1,0 +1,288 @@
+body {
+	width: 1440px;
+	height: 900px;
+	background-image: url(../images/background.jpg);
+	font-family: Montserrat;
+}
+
+button {
+	font-family: Montserrat;
+}
+
+.game-header {
+	display: flex;
+}
+
+.game-header__block1 {
+	width: 293px;
+	height: 136px;
+	margin-top: 35px;
+	margin-left: 41px;
+
+	position: relative;
+}
+
+.game-header__star {
+	width: 136px;
+	height: 136px;
+	border-radius: 100px;
+	background-color: white;
+	position: absolute;
+	z-index: 3;
+	box-shadow: 2px 3px 9px grey;
+}
+
+.game-header__star-value {
+	display: block;
+	background-image: url(../images/star.png);
+	background-repeat: no-repeat;
+	background-position: center;
+    width: 136px;
+    height: 136px;
+    box-sizing: border-box;
+    padding-top: 57px;
+    padding-left: 64px;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.game-header__points {
+    width: 207px;
+    height: 68px;
+    background-color: #A0B4BE;
+    border: solid 10px white;
+    border-radius: 35px;
+    position: absolute;
+    z-index: 2;
+    top: 20px;
+    left: 88px;
+    box-sizing: border-box;
+    color: white;
+    font-size: 35px;
+    padding-left: 73px;
+    padding-top: 6px;
+    box-shadow: 2px 3px 9px grey;
+    font-weight: bold;
+
+}
+
+.game-header__life {
+	width: 193px;
+	height: 46px;
+	background-color: white;
+	border-radius: 25px;
+	position: absolute;
+	z-index: 1;
+	bottom: 10px;
+    left: 47px;
+    box-shadow: 2px 3px 9px grey;
+    display: flex;
+}
+
+.game-header__heart {
+	width: 22px;
+	height: 20px;
+	margin-top: 20px;
+    margin-left: 8px;
+}
+
+.game-header__heart:first-child {
+	margin-left: 98px;
+}
+
+.game-header__heart_red {
+	background-image: url(../images/heart-red.png);
+}
+
+.game-header__heart_grey {
+	background-image: url(../images/heart-grey.png);
+}
+
+.game-header__block2 {
+	margin-left: 726px;
+    margin-top: 29px;
+}
+
+.game-header__start {
+    width: 231px;
+    height: 72px;
+	background-color: white;
+	color: #27A8F3;
+	font-size: 20px;
+	border-radius: 35px;
+	font-size: 20px;
+	border: none;
+	text-transform: uppercase;
+	font-weight: 800;
+}
+
+.game-header__start:hover {
+	background-color: #27A8F3;
+	color: white;
+}
+
+.game-header__help {
+	width: 74px;
+	height: 74px;
+	background-color: white;
+	color: #27A8F3;
+	border-radius: 42px;
+	margin-left: 16px;
+	font-size: 30px;
+	border: none;
+	font-weight: 800;
+}
+
+.game-header__help:hover {
+	background-color: #27A8F3;
+	color: white;	
+}
+
+.game-zone {
+	position: relative;
+}
+
+.game-zone__hole {
+	position: absolute;
+	width: 225px;
+	height: 167px;
+	background-image: url(../images/hole.png);
+	font-size: 153px;
+    text-align: center;
+}
+
+.hole-1 {
+	top: 122px;
+    left: 274px;
+}
+
+.hole-2 {
+	left: 607px;
+    top: 175px;
+}
+
+.hole-3 {
+	left: 945px;
+    top: 98px;
+}
+
+.hole-4 {
+	top: 379px;
+    left: 432px;
+}
+
+.hole-5 {
+	top: 386px;
+    left: 756px;
+}
+
+.game-zone__popup {
+	position: absolute;
+	z-index: 2;
+}
+
+.game-zone__popup-header {
+    width: 433px;
+    height: 70px;
+    color: #27A8F3;
+    font-size: 35px;
+    background-color: white;
+    position: absolute;
+    z-index: 2;
+    left: 454px;
+    top: -10px;
+    padding-top: 25px;
+    padding-left: 81px;
+    border-radius: 67px;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+.game-zone__popup-main {
+    width: 773px;
+    height: 460px;
+    background-color: #27A8F3;
+    border: 23px solid white;
+    border-radius: 67px;
+    position: absolute;
+    top: 31px;
+    left: 298px;
+    font-weight: 800;
+}
+
+.game-zone__popup-button {
+    width: 251px;
+    height: 75px;
+    color: white;
+    font-size: 35px;
+    background-color: #FFE500;
+    position: absolute;
+    z-index: 2;
+    left: 584px;
+    top: 489px;
+    border-radius: 67px;
+    border: 8px solid white;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+.game-zone__popup-button:hover {
+	background-color: #FFC700;
+}
+
+.game-over {
+	color: white;
+	display: flex;
+	flex-direction: column;
+}
+
+.game-over__congratulation {
+	font-size: 29px;
+	text-align: center;
+	padding-top: 51px;
+}
+
+.game-over__score {
+	font-size: 160px;
+	text-align: center;
+}
+
+.game-over__type {
+	font-size: 70px;
+	text-align: center;
+}
+
+.rules__list {
+	margin-top: 94px;
+    margin-left: 21px;
+}
+
+.rules__item {
+	margin-top: 12px;
+	color: white;
+	font-size: 20px;
+	font-weight: 800;
+}
+
+.game-header__star-value:hover {
+    animation: starUp 2s ease-out;
+}
+
+@keyframes starUp {
+    0% {
+        transform: translateX(0px) translateY(0px) rotate(0deg);
+    }
+    20% {
+        transform: translateX(0px) translateY(-50px) rotate(0deg);
+    }
+    25% {
+        transform: translateX(0px) translateY(-50px) rotate(10000deg);
+    }
+    75% {
+        transform: translateX(0px) translateY(-50px) rotate(0deg);
+    }
+    100% {
+        transform: translateX(0px) translateY(0px) rotate(0deg);
+    }
+}

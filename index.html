@@ -4,8 +4,53 @@
 	<meta charset="UTF-8">
 	<title>Игра "Мышки"</title>
 	<link rel="stylesheet" href="style/style.css">
+	<link rel="stylesheet" href="style/fonts.css">
 </head>
 <body>
-	
+	<header class="game-header">
+		<div class="game-header__block1">
+			<div class="game-header__star">
+				<span class="game-header__star-value">3</span>
+			</div>
+			<div class="game-header__points">512</div>
+			<div class="game-header__life">
+				<span class="game-header__heart game-header__heart_red"></span>
+				<span class="game-header__heart game-header__heart_red"></span>
+				<span class="game-header__heart game-header__heart_grey"></span>
+			</div>
+		</div>
+		<div class="game-header__block2">
+			<button class="game-header__start">Начать</button>
+			<button class="game-header__help">?</button>
+		</div>
+	</header>
+	<main class="game-zone">
+		<span class="game-zone__hole hole-1">&#128045;</span>
+		<span class="game-zone__hole hole-2"></span>
+		<span class="game-zone__hole hole-3">&#128053;</span>
+		<span class="game-zone__hole hole-4"></span>
+		<span class="game-zone__hole hole-5"></span>		
+		<section class="game-zone__popup" style="display: none;">
+			<span class="game-zone__popup-header">Игра завершена</span>
+			<div class="game-zone__popup-main game-over">
+				<span class="game-over__congratulation">Поздравляем! Вы набрали:</span>
+				<span class="game-over__score">512</span>
+				<span class="game-over__type">очков!</span>
+			</div>
+			<button class="game-zone__popup-button">ок</button>
+		</section>
+		<section class="game-zone__popup" style="display: none;">
+			<span class="game-zone__popup-header">Правила игры</span>
+			<div class="game-zone__popup-main rules">
+				<ol class="rules__list">
+					<li class="rules__item">В одной из 5-ти норок в случайном порядке периодически появляется мышь 🐭и другие emoji 🐭🐼🐻🦊🐱🐱...</li>
+					<li class="rules__item">Нужно поймать мышь. При клике по мыши игроку добавляется +10 очков.</li>
+					<li class="rules__item">После каждой пятой пойманной мыши скорость её случайного появления увеличивается.</li>
+					<li class="rules__item">Если клик был выполнен по другому emoji, то у игрока отнимается жизнь. Всего 3 жизни. Если жизни закончились, то игра останавливается.</li>
+				</ol>
+			</div>
+			<button class="game-zone__popup-button">ок</button>
+		</section>
+	</main>
 </body>
 </html>
