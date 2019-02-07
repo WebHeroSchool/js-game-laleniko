@@ -150,6 +150,7 @@ button {
 	background-image: url(../images/hole.png);
 	font-size: 153px;
     text-align: center;
+    cursor: pointer;
 }
 
 .hole-1 {
