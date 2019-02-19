@@ -14,7 +14,8 @@ class Game {
 		let elem = this.emojisArr[randomAnimal];
 		let zone = document.querySelectorAll(".game-zone__hole");
 		zone[randomZone].innerHTML = elem;
-		zone[randomZone].addEventListener('click', () => console.log(zone[randomZone].innerHTML),{once: true});
+		zone[randomZone].addEventListener('click', () => this.isMouses(elem), {once:true});
+		this.innerScores();
 	}
 
 	deleteEmojy() {
@@ -26,9 +27,25 @@ class Game {
 		}
 	}
 
-	emojyDance() {
-		this.interval = setInterval( () => this.createEmojy(),3000);
+	innerLives() {
 
+	}
+
+	innerScores() {
+		let elem = document.querySelectorAll(".game-header__points");
+		elem[0].innerHTML = this.score;
+	}
+
+	isMouses(a) {
+		console.log(a);
+		if (a!=='🐭') {
+			this.score += 10;
+		} else 
+		this.lives -= 1;
+	}
+
+	emojyDance() {
+		this.interval = setInterval( () => this.createEmojy(),1500);
 	}
 	
 }
