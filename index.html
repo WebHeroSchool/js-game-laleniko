@@ -10,13 +10,13 @@
 	<header class="game-header">
 		<div class="game-header__block1">
 			<div class="game-header__star">
-				<span class="game-header__star-value">3</span>
+				<span class="game-header__star-value game-header__star-value_animation">1</span>
 			</div>
-			<div class="game-header__points"></div>
+			<div class="game-header__points">0</div>
 			<div class="game-header__life">
 				<span class="game-header__heart game-header__heart_red"></span>
 				<span class="game-header__heart game-header__heart_red"></span>
-				<span class="game-header__heart game-header__heart_grey"></span>
+				<span class="game-header__heart game-header__heart_red"></span>
 			</div>
 		</div>
 		<div class="game-header__block2">
@@ -30,16 +30,16 @@
 		<span class="game-zone__hole hole-3"></span>
 		<span class="game-zone__hole hole-4"></span>
 		<span class="game-zone__hole hole-5"></span>		
-		<section class="game-zone__popup" style="display: none;">
+		<section class="game-zone__popup game-zone__popup-gameover active">
 			<span class="game-zone__popup-header">Игра завершена</span>
 			<div class="game-zone__popup-main game-over">
 				<span class="game-over__congratulation">Поздравляем! Вы набрали:</span>
 				<span class="game-over__score">512</span>
 				<span class="game-over__type">очков!</span>
 			</div>
-			<button class="game-zone__popup-button">ок</button>
+			<button class="game-zone__popup-button game-zone__popup-button_game-over">ок</button>
 		</section>
-		<section class="game-zone__popup" style="display: none;">
+		<section class="game-zone__popup game-zone__popup-help active">
 			<span class="game-zone__popup-header">Правила игры</span>
 			<div class="game-zone__popup-main rules">
 				<ol class="rules__list">
@@ -49,7 +49,7 @@
 					<li class="rules__item">Если клик был выполнен по другому emoji, то у игрока отнимается жизнь. Всего 3 жизни. Если жизни закончились, то игра останавливается.</li>
 				</ol>
 			</div>
-			<button class="game-zone__popup-button">ок</button>
+			<button class="game-zone__popup-button game-zone__popup-button_help">ок</button>
 		</section>
 	</main>
 	<script src="script/script.js"></script>

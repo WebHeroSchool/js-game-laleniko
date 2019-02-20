@@ -85,6 +85,7 @@ button {
 	height: 20px;
 	margin-top: 20px;
     margin-left: 8px;
+    background-image: url(../images/heart-grey.png);
 }
 
 .game-header__heart:first-child {
@@ -93,10 +94,6 @@ button {
 
 .game-header__heart_red {
 	background-image: url(../images/heart-red.png);
-}
-
-.game-header__heart_grey {
-	background-image: url(../images/heart-grey.png);
 }
 
 .game-header__block2 {
@@ -269,8 +266,12 @@ button {
 	font-weight: 800;
 }
 
-.game-header__star-value:hover {
+.game-header__star-value_animation {
     animation: starUp 2s ease-out;
+}
+
+.active {
+    display: none;
 }
 
 @keyframes starUp {
