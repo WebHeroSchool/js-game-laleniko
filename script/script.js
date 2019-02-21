@@ -5,7 +5,7 @@ class Game {
 		this.level = 1;
 		this.isRunnig = true;
 		this.isMouse = false;
-		this.emojisArr = ['🐭', '🐼', '🐻', '🦁', '🐽', '🐨', '🦊', '🐱', '🐰', '🐯'];
+		this.emojisArr = ['🐭', '🐼', '🐻', '🦁', '🐽', '🐨', '🦊', '🐱', '🐭', '🐰' , '🐯'];
 		this.emojiNow =  '🐭';
 		this.allMouse = 0;
 		this.speed = 2500;
@@ -19,9 +19,14 @@ class Game {
 			scores[0].innerHTML = this.score;
 			elem[0].classList.remove('active');
 		} else {
-			let randomAnimal = Math.floor(Math.random() * 9);
+			let randomAnimal = Math.floor(Math.random() * 10);
 			let randomZone = Math.floor(Math.random() * 5);
-			let elem = this.emojisArr[randomAnimal];
+			let elem = 0;
+			if( Math.random() <= 0.4 ) {
+            	elem = this.emojisArr[0];
+       		 } else {
+       		 	elem = this.emojisArr[randomAnimal];
+       		 }
 			let zone = document.querySelectorAll(".game-zone__hole");
 			this.emojiNow = elem;
 			zone[randomZone].innerHTML = elem;
@@ -49,12 +54,16 @@ class Game {
 		}
 	}
 
-	innerLives() {
+	deleteLives() {
 		let elem = document.querySelectorAll(".game-header__heart");
-		for (let i = 0; i < 3; i++) {
-			elem[i].classList.remove('game-header__heart_red')
+		for (let i = 2; i >= this.lives; i--) {
+			elem[i].classList.remove('game-header__heart_red');
 		}
-		for (let i = 0; i < this.lives; i++) {
+	}
+
+	addLives() {
+		let elem = document.querySelectorAll(".game-header__heart");
+		for (var i = 0; i < 3; i++) {
 			elem[i].classList.add('game-header__heart_red');
 		}
 
@@ -77,7 +86,7 @@ class Game {
 
 		} else 
 			this.lives -= 1;
-			this.innerLives();
+			this.deleteLives();
 			this.deleteEmojy();
 			clearInterval(this.interval);
 			this.createEmojy();
@@ -90,7 +99,7 @@ class Game {
 		this.speed = 2500;
 		this.emojiNow =  '🐭';
 		this.allMouse = 0;
-		this.innerLives();
+		this.addLives();
 		this.innerScores();
 		let elem = document.querySelectorAll(".game-header__star-value");
 		elem[0].innerHTML = this.level;
