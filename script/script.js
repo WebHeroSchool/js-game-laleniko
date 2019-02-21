@@ -66,7 +66,7 @@ class Game {
 	}
 
 	isMouses() {
-		if (this.emojiNow !== '🐭') {
+		if (this.emojiNow === '🐭') {
 			this.score += 10;
 			this.allMouse +=1;
 			this.innerScores();
