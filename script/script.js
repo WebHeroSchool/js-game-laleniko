@@ -22,8 +22,8 @@ class Game {
 			let randomAnimal = Math.floor(Math.random() * 9);
 			let randomZone = Math.floor(Math.random() * 5);
 			let elem = this.emojisArr[randomAnimal];
-			this.emojiNow = elem;
 			let zone = document.querySelectorAll(".game-zone__hole");
+			this.emojiNow = elem;
 			zone[randomZone].innerHTML = elem;
 			this.interval = setTimeout( () => this.createEmojy(),this.speed);
 		}
