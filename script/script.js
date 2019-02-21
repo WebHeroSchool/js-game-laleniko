@@ -72,11 +72,15 @@ class Game {
 			this.innerScores();
 			this.gameSpeed();
 			this.deleteEmojy();
+			clearInterval(this.interval);
+			this.createEmojy();
 
 		} else 
 			this.lives -= 1;
 			this.innerLives();
 			this.deleteEmojy();
+			clearInterval(this.interval);
+			this.createEmojy();
 	}
 
 	clearGame() {
