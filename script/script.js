@@ -6,7 +6,6 @@ class Game {
 		this.isRunnig = true;
 		this.isMouse = false;
 		this.emojisArr = ['🐭', '🐼', '🐻', '🦁', '🐽', '🐨', '🦊', '🐱', '🐭', '🐰' , '🐯'];
-		this.emojiNow =  '🐭';
 		this.allMouse = 0;
 		this.speed = 2500;
 	}
@@ -28,7 +27,6 @@ class Game {
        		 	elem = this.emojisArr[randomAnimal];
        		 }
 			let zone = document.querySelectorAll(".game-zone__hole");
-			this.emojiNow = elem;
 			zone[randomZone].innerHTML = elem;
 			this.interval = setTimeout( () => this.createEmojy(),this.speed);
 		}
@@ -74,22 +72,24 @@ class Game {
 		elem[0].innerHTML = this.score;
 	}
 
-	isMouses() {
-		if (this.emojiNow === '🐭') {
+	isMouses(event) {
+		console.log(event.target.innerHTML);
+		if (event.target.innerHTML === '🐭') {
 			this.score += 10;
 			this.allMouse +=1;
 			this.innerScores();
 			this.gameSpeed();
 			this.deleteEmojy();
-			clearInterval(this.interval);
-			this.createEmojy();
 
-		} else 
+		} else if (event.target.innerHTML==="") {
+
+		} 
+
+		 else {
 			this.lives -= 1;
 			this.deleteLives();
 			this.deleteEmojy();
-			clearInterval(this.interval);
-			this.createEmojy();
+		}
 	}
 
 	clearGame() {
@@ -111,10 +111,18 @@ class Game {
 		this.clearGame();
 		this.createEmojy();
 	}
+
+	addEvent() {
+		let zone = document.querySelectorAll(".game-zone__hole");
+		for (var i = 0; i < zone.length; i++) {
+			zone[i].addEventListener('click', this.isMouses.bind(this));
+		}
+	}
 	
 }
 
 let game = new Game;
+game.addEvent();
 
 let rulesOpen = document.querySelectorAll('.game-header__help');
 let rulesClose = document.querySelectorAll('.game-zone__popup-button_help');
@@ -127,8 +135,3 @@ gameStart[0].addEventListener('click',() => {game.emojyDance()});
 rulesOpen[0].addEventListener('click', () => {rules[0].classList.remove('active')});
 rulesClose[0].addEventListener('click', () => {rules[0].classList.add('active')});
 popupClose[0].addEventListener('click', () => popup[0].classList.add('active'));
-
-let zone = document.querySelectorAll(".game-zone__hole");
-		for (var i = 0; i < zone.length; i++) {
-			zone[i].addEventListener('click', () => game.isMouses());
-		}
