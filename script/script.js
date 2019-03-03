@@ -135,3 +135,4 @@ gameStart[0].addEventListener('click',() => {game.emojyDance()});
 rulesOpen[0].addEventListener('click', () => {rules[0].classList.remove('active')});
 rulesClose[0].addEventListener('click', () => {rules[0].classList.add('active')});
 popupClose[0].addEventListener('click', () => popup[0].classList.add('active'));
+popupClose[0].addEventListener('click', () => game.clearGame());
